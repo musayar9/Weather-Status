@@ -8,7 +8,7 @@ import { memo } from 'react'
 
 const Days = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri' , 'Sat']
 
-function DayWeather({hava, state}) {
+function DayWeather({weatherStatus, state}) {
     const weekDay = new Date().getDay()
     const weatherDay = Days.slice(weekDay, Days.length).concat(Days.slice(0,weekDay))
 
@@ -22,7 +22,7 @@ function DayWeather({hava, state}) {
      <div className='flex items-center justify-center'> <label className='font-bold text-xl md:text-3xl text-blue-600 border border-gray-400 p-3 sm:p-4 md:p-6 rounded-lg flex items-center justify-center w-96'>Daily Weather</label></div>
     
     <Accordion allowZeroExpanded>
-     {hava && hava.map((weather,index)=>( 
+     {weatherStatus && weatherStatus.map((weather,index)=>( 
   (index === 0 ? null  : 
        <AccordionItem key={index} >
          <AccordionItemHeading className='m-2'>

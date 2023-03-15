@@ -15,7 +15,7 @@ function App() {
   const [state, setState] = useState(false)
 
   const inputRef = useRef(null)
-const [hava, setHava] = useState()
+const [weatherStatus, setWeatherStatus] = useState()
   useEffect(()=> {
     async function GetWeatherApi() {
       try {
@@ -38,7 +38,7 @@ const [hava, setHava] = useState()
 
         const data = JSON.parse(this.responseText)
         console.log(data.result)
-        setHava (data.result)
+        setWeatherStatus (data.result)
         })
 
 
@@ -63,7 +63,7 @@ const handleClick = () =>{
     
         <div className='container m-auto p-2 sm:p-4  border border-gray-400 rounded-lg  xs:w-100 lg:w-120 mt-8 '>
             <div className='bg-white text-blue-700 p-2 md:p-6 flex items-center justify-center'>
-              <h3 className='font-bold text-2xl uppercase' >Hava Durumu</h3>
+              <h3 className='font-bold text-2xl uppercase' >weatherStatus Durumu</h3>
             </div>
             <div className='border-t'>
           <form onClick={(e)=>{e.preventDefault(); handleClick()}}>
@@ -82,7 +82,7 @@ const handleClick = () =>{
         
         </div>
      
-        <DayWeather hava = {hava} state={state}/>
+        <DayWeather weatherStatus = {weatherStatus} state={state}/>
     </>
   );
 }
