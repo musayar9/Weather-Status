@@ -30,7 +30,7 @@ function DayWeather({weatherStatus, state}) {
 
              <div className='flex flex-row items-center m-auto p-2  border border-gray-400 rounded-xl xs:w-100 lg:w-120'>  
              <h2 className='font-bold flex items-center text-lg sm:text-xl basis-1/3 md:basis-1/2 ml-4'><span className='hidden md:flex'>{weather.date} /</span>  {weatherDay[index]}</h2>       
-            <p className='basis-1/3 md:basis-1/2 ml-3'> <img className='  h-7 sm:h-10  w-7 sm:w-10 ' src={weather.icon}/></p>
+            <p className='basis-1/3 md:basis-1/2 ml-3'> <img className='  h-8 sm:h-10  w-8 sm:w-10 ' src={weather.icon}/></p>
         
              <p className='hidden sm:flex text font-bold text-lg sm:text-xl text-blue-500 basis-1/3 md:basis-1/2'>{weather.status}</p>
             
